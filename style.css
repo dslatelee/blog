@@ -11,12 +11,12 @@ body::before {
     height: 100%;
     z-index: -1;
 
-    background-image: url('images/backgrounds/ceiling.png');
+    background-image: url('images/backgrounds/side.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    filter: blur(8px);
+    filter: blur(10px) brightness(.9);
     transform: scale(1.05);
 }
 
@@ -36,10 +36,6 @@ body.home-entry::before {
     color: white;
 }
 
-.ig-blur {
-    filter: blur(4px);
-}
-
 @keyframes subtle-zoom {
     from {
         /*opacity: 0;*/
@@ -51,4 +47,9 @@ body.home-entry::before {
     to {
         transform: scale(1.05);
     }
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit:cover;
 }
