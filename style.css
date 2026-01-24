@@ -1,10 +1,10 @@
 body {
-    background-image: url('images/bg.png');
+    background-image: url('images/bgg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #574141;
+    background-color: #1a1f2b;
 }
 
 .nav-link {
@@ -12,7 +12,7 @@ body {
     letter-spacing: 1px;
     font-size: 0.85rem;
     margin-left: 20px;
-    color: #c4c4c4;
+    color: #9c9c9c;
 }
 
 .nav-link:hover {
