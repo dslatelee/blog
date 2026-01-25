@@ -11,7 +11,7 @@ body::before {
     height: 100%;
     z-index: -1;
 
-    background-image: url('images/backgrounds/side.png');
+    background-image: url('images/backgrounds/side.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body::before {
 }
 
 body.home-entry::before {
-    animation: subtle-zoom 1s ease-out forwards;
+    animation: subtle-zoom 2s ease-out forwards;
 }
 
 .nav-link {
@@ -38,12 +38,8 @@ body.home-entry::before {
 
 @keyframes subtle-zoom {
     from {
-        /*opacity: 0;*/
         transform: scale(1);
     }
-    /*10% {
-        opacity: 1;
-    }*/
     to {
         transform: scale(1.05);
     }
