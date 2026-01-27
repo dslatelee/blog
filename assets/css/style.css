@@ -32,14 +32,10 @@ body::before {
     color: rgb(255, 208, 187);
 }
 
-
-
 .card-img {
     height: 200px;
     object-fit: cover;
 }
-
-
 
 .recent-img {
     height: 280px;
@@ -79,4 +75,116 @@ body::before {
     .container {
         max-width: 1140px;
     }
+}
+
+/* ARTICLE PAGES */
+
+.article-text {
+    color: #ffffff !important; /* Sets base text to white */
+}
+
+.article-text h1,
+.article-text h2,
+.article-text h3,
+.article-text h4,
+.article-text li {
+    color: #ffffff !important;
+}
+
+.article-text h1 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.article-text h3 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.article-text h5 {
+    font-weight: light;
+    margin-top: 2rem;
+    color: #ffffff;
+}
+
+.article-text blockquote {
+    color: #ffffff !important;
+    font-style: italic;
+    font-size: 1.15rem;
+    
+    background: rgba(255, 255, 255, 0.1); /* Subtle background box */
+    padding: 1.5rem;
+    border-left: 4px solid #ffffff;       /* The white accent line */
+    border-radius: 5px;
+    
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.article-text ul {
+    margin-bottom: 3rem;   /* Adds big space after the list ends */
+    padding-left: 2rem;    /* Indents the bullets nicely */
+    color: #ffffff !important; /* Forces bullets and text to be white */
+}
+
+.article-text li {
+    margin-bottom: 0.75rem; /* Adds space BETWEEN the bullet points */
+    line-height: 1.6;       /* Makes multi-line bullets easier to read */
+}
+
+/* 1. The In-Text Citation Marker [1] */
+.citation-link {
+    font-size: 0.75em;        /* Smaller than normal text */
+    vertical-align: super;    /* Raises it up */
+    text-decoration: none;    /* No underline */
+    color: #a0a0a0;           /* Subtle gray */
+    margin-left: 2px;         /* Tiny space from the word */
+    transition: color 0.2s;
+}
+
+.citation-link:hover {
+    color: #ffffff;           /* Bright white when you hover */
+}
+
+/* 2. The Reference List at the Bottom */
+.reference-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Divider line */
+}
+
+.reference-section h5 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.reference-section ol {
+    color: #d0d0d0;
+    font-size: 0.9rem;
+    padding-left: 1.5rem;
+}
+
+.reference-section li {
+    margin-bottom: 0.5rem;
+}
+
+.citation-link {
+    font-size: 0.8em;
+    vertical-align: super;
+    text-decoration: none;
+    margin-left: 2px;
+    color: #007bff;
+}
+
+.citation-link:hover {
+    text-decoration: underline;
 }
