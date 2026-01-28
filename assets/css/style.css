@@ -32,14 +32,10 @@ body::before {
     color: rgb(255, 208, 187);
 }
 
-
-
 .card-img {
     height: 200px;
     object-fit: cover;
 }
-
-
 
 .recent-img {
     height: 280px;
@@ -79,4 +75,114 @@ body::before {
     .container {
         max-width: 1140px;
     }
+}
+
+/* ARTICLE PAGES */
+
+.article-text {
+    color: #ffffff !important;
+}
+
+.article-text h1,
+.article-text h2,
+.article-text h3,
+.article-text h4,
+.article-text li {
+    color: #ffffff !important;
+}
+
+.article-text h1 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.article-text h3 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.article-text h5 {
+    font-weight: light;
+    margin-top: 2rem;
+    color: #ffffff;
+}
+
+.article-text h6 {
+    font-weight: light;
+    margin-top: 0rem;
+    color: #ffffff;
+}
+
+.article-text blockquote {
+    color: #ffffff !important;
+    font-size: 1.15rem;
+    
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-left: 4px solid #ffffff;
+    border-radius: 5px;
+    
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.article-text ul {                  /* group for li */
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    color: #ffffff !important;
+}
+
+.article-text li {                  /* list items */
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.citation-link {
+    font-size: 0.75em;
+    vertical-align: super; 
+    text-decoration: none;  
+    color: #a0a0a0;
+    margin-left: 2px;
+    transition: color 0.2s;
+}
+
+.citation-link:hover {
+    color: #ffffff; 
+}
+
+.reference-section h5 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.reference-section ol {
+    color: #d0d0d0;
+    font-size: 0.9rem;
+    padding-left: 1.5rem;
+}
+
+.reference-section li {
+    margin-bottom: 0.5rem;
+}
+
+.citation-link {
+    font-size: 0.8em;
+    vertical-align: super;
+    text-decoration: none;
+    margin-left: 2px;
+    color: #007bff;
+}
+
+.citation-link:hover {
+    text-decoration: underline;
 }
