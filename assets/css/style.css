@@ -186,3 +186,55 @@ body::before {
 .citation-link:hover {
     text-decoration: underline;
 }
+
+/* 1. The Trigger Word (The text you hover over) */
+.wiki-tooltip {
+    position: relative;          /* Anchors the popup to this word */
+    cursor: help;                /* Changes mouse cursor to a '?' */
+    text-decoration: underline; /* Adds a dotted line under the word */
+    color: #aebfce;              /* Distinct color (light blue-ish) */
+}
+
+/* 2. The Popup Box (Hidden by default) */
+.wiki-tooltip .wiki-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    
+    /* Position the box */
+    bottom: 120%;                /* Moves it just above the text */
+    left: 50%;
+    transform: translateX(-50%); /* Centers it perfectly */
+    
+    /* Styling the box */
+    width: 250px;                /* Width of the wikipedia box */
+    background-color: #ffffff;   /* White background */
+    color: #333;                 /* Dark text for readability */
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* The "floating" shadow */
+    z-index: 1000;               /* Ensures it sits on top of everything */
+    
+    /* Smooth Fade In */
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* 3. The Little Triangle (Arrow pointing down) */
+.wiki-tooltip .wiki-content::after {
+    content: "";
+    position: absolute;
+    top: 100%;                   /* At the bottom of the box */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+/* 4. The Hover Effect (Make it appear) */
+.wiki-tooltip:hover .wiki-content {
+    visibility: visible;
+    opacity: 1;
+}
