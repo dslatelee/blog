@@ -1,5 +1,6 @@
 body {
     background-color: #131721;
+    color: #ffffff;
 }
 
 body::before {
@@ -20,12 +21,19 @@ body::before {
     transform: scale(1.05);
 }
 
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
 .nav-link {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: .9rem;
     margin-left: 10px;
     color: #ffffff;
+    transition: color 0.2s ease;
 }
 
 .nav-link:hover {
@@ -43,16 +51,15 @@ body::before {
     object-fit: cover;
 }
 
+.carousel-item {
+    overflow: hidden;
+}
+
 .carousel-img {
-    transition: transform 0.6s ease-in-out;
-    
     height: 500px;
     width: 100%;
     object-fit: cover;
-}
-
-.carousel-item {
-    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
 }
 
 .carousel-item:hover .carousel-img {
@@ -65,67 +72,28 @@ body::before {
     left: 0;
     width: 100%;
     background: linear-gradient(to bottom, transparent 0%, rgba(19, 23, 33, 0.9));
-    padding-bottom: 3rem;
-    padding-top: 5rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 5rem 3rem 3rem 3rem;
 }
 
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1140px;
-    }
+.article-meta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
-/* ARTICLE PAGES */
-
-.article-text {
-    color: #ffffff !important;
-}
-
+.article-text,
 .article-text h1,
 .article-text h2,
 .article-text h3,
 .article-text h4,
+.article-text h5,
+.article-text h6,
 .article-text li {
     color: #ffffff !important;
-}
-
-.article-text h1 {
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #ffffff;
-}
-
-.article-text h3 {
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #ffffff;
-}
-
-.article-text h5 {
-    font-weight: light;
-    margin-top: 2rem;
-    color: #ffffff;
-}
-
-.article-text h6 {
-    font-weight: light;
-    margin-top: 0rem;
-    color: #ffffff;
-}
-
-.article-text blockquote {
-    color: #ffffff !important;
-    font-size: 1.15rem;
-    
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-left: 4px solid #ffffff;
-    border-radius: 5px;
-    
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
 }
 
 .article-text p {
@@ -134,16 +102,45 @@ body::before {
     margin-bottom: 1.5rem;
 }
 
-.article-text ul {                  /* group for li */
-    margin-bottom: 3rem;
-    padding-left: 2rem;
-    color: #ffffff !important;
+.article-text h1 {
+    font-weight: bold;
+    margin-bottom: 2rem;
 }
 
-.article-text li {                  /* list items */
+.article-text h3 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.article-text h5 {
+    font-weight: light;
+    margin-top: 2rem;
+}
+
+.article-text h6 {
+    font-weight: light;
+    margin-top: 0;
+}
+
+.article-text ul {
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.article-text li {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     line-height: 1.7;
+}
+
+.article-text blockquote {
+    color: #ffffff !important;
+    font-size: 1.15rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-left: 4px solid #ffffff;
+    border-radius: 5px;
+    margin: 1.5rem 0;
 }
 
 .citation-link {
@@ -157,6 +154,7 @@ body::before {
 
 .citation-link:hover {
     color: #ffffff; 
+    text-decoration: underline;
 }
 
 .reference-section h5 {
@@ -175,57 +173,39 @@ body::before {
     margin-bottom: 0.5rem;
 }
 
-.citation-link {
-    font-size: 0.8em;
-    vertical-align: super;
-    text-decoration: none;
-    margin-left: 2px;
-    color: #007bff;
-}
-
-.citation-link:hover {
-    text-decoration: underline;
-}
-
-/* 1. The Trigger Word (The text you hover over) */
 .wiki-tooltip {
-    position: relative;          /* Anchors the popup to this word */
-    cursor: help;                /* Changes mouse cursor to a '?' */
-    text-decoration: underline; /* Adds a dotted line under the word */
-    color: #aebfce;              /* Distinct color (light blue-ish) */
+    position: relative;
+    cursor: help;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: #aebfce;
 }
 
-/* 2. The Popup Box (Hidden by default) */
 .wiki-tooltip .wiki-content {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    
-    /* Position the box */
-    bottom: 120%;                /* Moves it just above the text */
+    bottom: 120%;
     left: 50%;
-    transform: translateX(-50%); /* Centers it perfectly */
+    transform: translateX(-50%);
+    z-index: 1000;
     
-    /* Styling the box */
-    width: 250px;                /* Width of the wikipedia box */
-    background-color: #ffffff;   /* White background */
-    color: #333;                 /* Dark text for readability */
+    width: 250px;
+    background-color: #ffffff;
+    color: #333;
     padding: 1rem;
     border-radius: 5px;
     font-size: 0.9rem;
     line-height: 1.4;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* The "floating" shadow */
-    z-index: 1000;               /* Ensures it sits on top of everything */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     
-    /* Smooth Fade In */
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-/* 3. The Little Triangle (Arrow pointing down) */
 .wiki-tooltip .wiki-content::after {
     content: "";
     position: absolute;
-    top: 100%;                   /* At the bottom of the box */
+    top: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
@@ -233,7 +213,6 @@ body::before {
     border-color: #ffffff transparent transparent transparent;
 }
 
-/* 4. The Hover Effect (Make it appear) */
 .wiki-tooltip:hover .wiki-content {
     visibility: visible;
     opacity: 1;
