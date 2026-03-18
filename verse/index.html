@@ -23,7 +23,7 @@
                 const data = await response.json();
                 document.getElementById('number-display').innerText = data[0];
             } catch (error) {
-                document.getElementById('number-display').innerText = "Error loading number";
+                document.getElementById('number-display').innerText = `Error loading number: ${Error}`;
             }
         }
 
