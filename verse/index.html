@@ -25,6 +25,12 @@
     
     <script>
 
+        const favoriteVerses = [
+            "1 Corinthians 1:1",
+            "John 2:4",
+            "Ephesians 5:5"
+        ]
+
         const bibleBooks = [
             "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth", 
             "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", 
@@ -39,22 +45,20 @@
 
         async function fetchRandomVerse() {
             try {
-                const bookIndex = Math.floor(Math.random() * bibleBooks.length);
-                const selectedBookName = bibleBooks[bookIndex];
-                
-                const fileResponse = await fetch(`NASB_books/${selectedBookName}.json`);
-                if (!fileResponse.ok) throw new Error("File not found");
-                const bookData = await fileResponse.json();
+                const randomRef = favoriteVerses[Math.floor(Math.random() * favoriteVerses.length)];
 
-                const chapters = bookData[selectedBookName];
-                const chapterKeys = Object.keys(chapters);
-                const randomChapter = chapterKeys[Math.floor(Math.random() * chapterKeys.length)];
-                
-                const verses = chapters[randomChapter];
-                const verseKeys = Object.keys(verses);
-                const randomVerse = verseKeys[Math.floor(Math.random() * verseKeys.length)];
-                
-                const finalContent = verses[randomVerse];
+                const match = randomRef.match(/(.+)\s(\d+):(\d+)/);
+                if (!match) throw new Error("Invalid reference format");
+
+                const bookName = match[1];
+                const chapterNum = match[2];
+                const verseNum = match[3];
+
+                const response = await fetch(`NASB_books/${bookName}.json`);
+                if (!response.ok) throw new Error("File not found");
+                const bookData = await response.json();
+
+                const verseText = bookData[bookName][chapterNum][verseNum];
 
                 document.getElementById('display-book').innerText = selectedBookName;
                 document.getElementById('display-chapter').innerText = randomChapter;
