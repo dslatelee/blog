@@ -10,9 +10,12 @@
     <link rel="preload" as="image" href="../assets/images/backgrounds/side.jpg">
 </head>
 <body>
-    <div>
-        <p id="number-display">Loading...</p>
-    </div>
+    <div class="verse-info">
+    <h2 id="display-book"></h2>
+    <h3>Chapter: <span id="display-chapter"></span></h3>
+    <h4>Verse: <span id="display-verse"></span></h4>
+    <p id="number-display"></p>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -49,8 +52,10 @@
                 
                 const finalContent = verses[randomVerse];
 
+                document.getElementById('display-book').innerText = selectedBookName;
+                document.getElementById('display-chapter').innerText = randomChapter;
+                document.getElementById('display-verse').innerText = randomVerse;
                 document.getElementById('number-display').innerText = `"${finalContent}"`;
-                document.getElementById('verse-ref').innerText = `${selectedBookName} ${randomChapter}:${randomVerse}`;
 
             } catch (error) {
                 console.error("Selection Error:", err);
