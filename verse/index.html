@@ -11,33 +11,36 @@
 </head>
 <body>
     
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-        <div class="p-5 rounded-3 text-center" 
-            style="background-color: rgba(36, 30, 69, 0.08); 
-                    max-width: 650px; 
-                    width: 90%;
-                    transition: opacity 0.5s ease-in-out;">
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    
+    <div class="col-10 col-md-8 col-lg-5 mx-auto">
+        
+        <div class="p-5 rounded-4 text-center" 
+            style="background-color: rgba(36, 30, 69, 0.05); 
+                border: 1px solid rgba(0, 0, 0, 0.03);">
             
             <div class="verse-info">
-                <p id="display-text" class="mb-3" 
-                style="font-size: 1.25rem; 
+                <p id="display-text" class="mb-4" 
+                    style="font-size: 1.35rem; 
                         font-family: 'Georgia', serif; 
-                        line-height: 1.7; 
-                        color: #e8e8e8;
-                        letter-spacing: 0.01em;">
-                </p>
+                        line-height: 1.8; 
+                        color: #e0e0e0;">
+                    </p>
 
-                <div style="font-size: 0.8rem; 
-                            color: #e8e8e8;
+                <hr style="width: 30px; margin: 20px auto; opacity: 0.2;">
+
+                <div style="font-size: 0.75rem; 
+                            color: #888; 
                             text-transform: uppercase; 
-                            letter-spacing: 2px;
-                            margin-top: 20px;">
+                            letter-spacing: 3px;">
                     <span id="display-book"></span>
                     <span id="display-chapter"></span>:<span id="display-verse"></span>
                 </div>
             </div>
         </div>
+        
     </div>
+</div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
