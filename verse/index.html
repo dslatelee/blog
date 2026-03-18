@@ -12,13 +12,14 @@
 <body>
     <div class="verse-info">
 
-        <p>
-            <p id="verse-text"></p>
-            &nbsp;
-            <span id="display-chapter"></span>
-            :
-            <span id="display-verse"></span>
-        </p>
+        <p id="display-text"></p>
+
+        <p id="display-book"></p>
+        &nbsp;
+        <p id="display-chapter"></p>
+        :
+        <p id="display-verse"></p>
+        
 
     </div>
 
@@ -60,11 +61,11 @@
                 document.getElementById('display-book').innerText = selectedBookName;
                 document.getElementById('display-chapter').innerText = randomChapter;
                 document.getElementById('display-verse').innerText = randomVerse;
-                document.getElementById('verse-text').innerText = `"${finalContent}"`;
+                document.getElementById('display-text').innerText = `"${finalContent}"`;
 
             } catch (error) {
                 console.error("Selection Error:", err);
-                document.getElementById('verse-text').innerText = "Oops! Try that again.";
+                document.getElementById('display-text').innerText = "Oops! Try that again.";
             }
         }
 
