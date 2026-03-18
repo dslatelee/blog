@@ -11,36 +11,23 @@
 </head>
 <body>
     
-    <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
     
-    <div class="col-10 col-md-8 col-lg-5 mx-auto">
-        
-        <div class="p-5 rounded-4 text-center" 
-            style="background-color: rgba(36, 30, 69, 0.05); 
-                border: 1px solid rgba(0, 0, 0, 0.03);">
+    <div class="col-11 col-md-8 col-lg-5 text-center p-5 rounded-4" 
+        style="background-color: rgba(36, 30, 69, 0.15); backdrop-filter: blur(5px);">
             
             <div class="verse-info">
                 <p id="display-text" class="mb-4" 
-                    style="font-size: 1.35rem; 
-                        font-family: 'Georgia', serif; 
-                        line-height: 1.8; 
-                        color: #e0e0e0;">
-                    </p>
+                style="font-size: 1.5rem; font-family: 'Georgia', serif; line-height: 1.6; color: white;">
+                </p>
 
-                <hr style="width: 30px; margin: 20px auto; opacity: 0.2;">
-
-                <div style="font-size: 0.75rem; 
-                            color: #888; 
-                            text-transform: uppercase; 
-                            letter-spacing: 3px;">
+                <div style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; color: rgba(255,255,255,0.7);">
                     <span id="display-book"></span>
                     <span id="display-chapter"></span>:<span id="display-verse"></span>
                 </div>
             </div>
         </div>
-        
     </div>
-</div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
