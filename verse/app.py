@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 @app.route("/")
-def grab_verse():
+def index():
     url = "http://www.randomnumberapi.com/api/v1.0/random"
     params = {
         'min': 100,
