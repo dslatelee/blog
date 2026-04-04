@@ -115,6 +115,7 @@ body::before {
 .article-text h5 {
     font-weight: light;
     margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .article-text h6 {
