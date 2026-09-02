@@ -21,9 +21,10 @@ body::before {
     transform: scale(1.05);
 }
 
-@media (min-width: 1400px) {
+/* Caps the max width at 850px for all desktop screens to simulate a 70% zoom */
+@media (min-width: 992px) {
     .container {
-        max-width: 1140px;
+        max-width: 850px !important;
     }
 }
 
@@ -40,24 +41,26 @@ body::before {
     color: rgb(255, 208, 187);
 }
 
+/* --- UPDATED IMAGE CLASSES --- */
+
 .card-img {
-    height: 200px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Keeps a perfect widescreen rectangle */
     object-fit: cover;
 }
 
 .recent-img {
-    height: 280px;
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Shrinks proportionally on mobile */
     object-fit: cover;
 }
 
-.carousel-item {
-    overflow: hidden;
-}
-
 .carousel-img {
-    height: 500px;
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Matches the natural thumbnail shape so nothing gets chopped */
     object-fit: cover;
     transition: transform 0.6s ease-in-out;
 }
